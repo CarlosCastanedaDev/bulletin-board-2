@@ -12,6 +12,9 @@
   Add a new post
 </h2>
 
+
+<% if current_user %>
+
 <form action="/insert_post" method="post">
   <div>
     <label for="title_box">
@@ -43,6 +46,11 @@
     Add post
   </button>
 </form>
+  
+  <% else %>
+  <p>Please <a href="/users/sign_in">sign-in</a> to add a post</p>
+<% end %>
+
 
 <hr>
 
